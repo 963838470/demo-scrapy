@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-'''爬虫执行页面'''
+''' 爬虫文件 '''
 import scrapy
 from Tencent.items import TencentItem
 
 
 class TencentSpider(scrapy.Spider):
-    ''' 将页面的数据写入实体 '''
+    ''' 处理请求和响应 '''
     name = 'tencent'
     allowed_domains = ['tencent.com']
     baseURL = 'http://hr.tencent.com/position.php?&start='
@@ -18,7 +18,9 @@ class TencentSpider(scrapy.Spider):
             item = TencentItem()
             item['positionName'] = node.xpath("./td[1]/a/text()").extract()[0]
             item['positionLink'] = node.xpath("./td[1]/a/@href").extract()[0]
-            item['positionType'] = node.xpath("./td[2]/text()").extract()[0]
+            if len(node.xpath("./td[2]/text()").extract()) > 0:
+                item['positionType'] = node.xpath(
+                    "./td[2]/text()").extract()[0]
             item['recruitNumber'] = node.xpath("./td[3]/text()").extract()[0]
             item['workLocation'] = node.xpath("./td[4]/text()").extract()[0]
             item['publishTime'] = node.xpath("./td[5]/text()").extract()[0]
@@ -30,3 +32,7 @@ class TencentSpider(scrapy.Spider):
         #     self.offset += 10
         #     url = self.baseURL + str(self.offset)
         #     yield scrapy.Request(url, callback=self.parse)
+
+        if len(response.xpath("//a[@class='noactive' and @id='next']")) < 1:
+            url = response.xpath("//a[@id='next']/@href").extract()[0]
+            yield scrapy.Request("http://hr.tencent.com/" + url, callback=self.parse)

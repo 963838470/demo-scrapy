@@ -4,7 +4,7 @@ import scrapy
 
 
 class TencentItem(scrapy.Item):
-    '''定义实体类'''
+    ''' 需要提取的数据 '''
     positionName = scrapy.Field()  # 职位名称
     positionLink = scrapy.Field()  # 职位详情链接
     positionType = scrapy.Field()  # 职位类别
