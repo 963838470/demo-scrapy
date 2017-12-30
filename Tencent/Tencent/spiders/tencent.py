@@ -8,7 +8,7 @@ class TencentSpider(scrapy.Spider):
     ''' 将页面的数据写入实体 '''
     name = 'tencent'
     allowed_domains = ['tencent.com']
-    baseURL = 'http://hr.tencent.com/position.php?&start'
+    baseURL = 'http://hr.tencent.com/position.php?&start='
     offset = 0
     start_urls = [baseURL + str(offset)]
 
@@ -25,7 +25,8 @@ class TencentSpider(scrapy.Spider):
             print(item)
             yield item
 
-        if self.offset < 2600:
-            self.offset += 10
-            url = self.baseURL + str(self.offset)
-            yield scrapy.Request(url, callback=self.parse)
+        # 直接拼接url,页数无法确定
+        # if self.offset < 20:
+        #     self.offset += 10
+        #     url = self.baseURL + str(self.offset)
+        #     yield scrapy.Request(url, callback=self.parse)
