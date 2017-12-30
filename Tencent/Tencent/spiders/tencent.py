@@ -23,3 +23,5 @@ class TencentSpider(scrapy.Spider):
             item['workLocation'] = node.xpath("./td[4]/text()").extract()[0]
             item['publishTime'] = node.xpath("./td[5]/text()").extract()[0]
             print(item)
+            yield item
+            
