@@ -11,7 +11,7 @@ class DouyuPipeline(ImagesPipeline):
         vertical_src = item["vertical_src"]
         yield scrapy.Request(vertical_src)
 
-    def item_completed(self, results, item, info):
-        if isinstance(item, dict) or self.images_result_field in item.fields:
-            item[self.images_result_field] = [x for ok, x in results if ok]
-        return item
+    # def item_completed(self, results, item, info):
+    #     if isinstance(item, dict) or self.images_result_field in item.fields:
+    #         item[self.images_result_field] = [x for ok, x in results if ok]
+    #     return item

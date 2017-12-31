@@ -22,5 +22,5 @@ class DouyuSpider(scrapy.Spider):
 
             yield item
 
-        self.offset += 20
-        yield scrapy.Request(self.baseURL + str(self.offset), callback=self.parse)
+        # self.offset += 20
+        # yield scrapy.Request(self.baseURL + str(self.offset), callback=self.parse)

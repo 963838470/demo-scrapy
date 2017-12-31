@@ -14,13 +14,15 @@ BOT_NAME = 'Douyu'
 SPIDER_MODULES = ['Douyu.spiders']
 NEWSPIDER_MODULE = 'Douyu.spiders'
 
-IMAGES_STORE = "E://WorkSpace/demo-scrapy/Douyu/Images/"
+IMAGES_STORE = "E:/WorkSpace/demo-scrapy/Douyu/Images/"
+#IMAGES_STORE = "/Images"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'Douyu (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+#ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
