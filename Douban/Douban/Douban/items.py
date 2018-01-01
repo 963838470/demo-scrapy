@@ -9,6 +9,16 @@ import scrapy
 
 
 class DoubanItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    Title = scrapy.Field()
+    OtherTitle = scrapy.Field()
+    ImgSrc = scrapy.Field()
+    Playable = scrapy.Field()
+    Director = scrapy.Field()
+    Performer = scrapy.Field()
+    Year = scrapy.Field()
+    Country = scrapy.Field()
+    Type = scrapy.Field()
+    Score = scrapy.Field()
+    ScoreUserNum = scrapy.Field()
+    Quote = scrapy.Field()
+    DetailLink = scrapy.Field()
