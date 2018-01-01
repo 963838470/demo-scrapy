@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from demoscrapy.items import ItcastItem
+from Itcast.items import ItcastItem
 
 
 class ItcastSpider(scrapy.Spider):

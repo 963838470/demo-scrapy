@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for demoscrapy project
+# Scrapy settings for Itcast project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,20 +9,20 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'demoscrapy'
+BOT_NAME = 'Itcast'
 
-SPIDER_MODULES = ['demoscrapy.spiders']
-NEWSPIDER_MODULE = 'demoscrapy.spiders'
+SPIDER_MODULES = ['Itcast.spiders']
+NEWSPIDER_MODULE = 'Itcast.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'demoscrapy (+http://www.yourdomain.com)'
+#USER_AGENT = 'Itcast (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 500
+#CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -39,7 +39,7 @@ CONCURRENT_REQUESTS = 500
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
+# DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
 #}
@@ -47,25 +47,25 @@ CONCURRENT_REQUESTS = 500
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'demoscrapy.middlewares.DemoscrapySpiderMiddleware': 543,
-# }
+#    'Itcast.middlewares.ItcastSpiderMiddleware': 543,
+#}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'demoscrapy.middlewares.MyCustomDownloaderMiddleware': 543,
+# DOWNLOADER_MIDDLEWARES = {
+#    'Itcast.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
+# EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'demoscrapy.pipelines.DemoscrapyPipeline': 300,
+    'Itcast.pipelines.ItcastPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
