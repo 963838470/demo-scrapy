@@ -37,9 +37,10 @@ def get_info(url):
             imgSrc + "', '" + playable + "', '" + director + "', '" + performer + "', '" + year + "', '" + \
             country + "', '" + _type + "', '" + score + "', '" + \
             scoreUserNum + "', '" + quote + "', '" + detailLink + "')"
+        print(sql)
         MSSQL().ExecNonQuery(sql)
 
-        print(node)
+        # print(node)
 
     # names = soup.select('div.hd > a')
     # srcs = soup.select('div.pic > a > img')

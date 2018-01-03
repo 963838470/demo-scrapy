@@ -29,10 +29,10 @@ class MSSQL:
         self.conn.close()
 
 # 使用方式
-ms = MSSQL()
-reslist = ms.ExecQuery("SELECT * FROM Movie")
-for i in reslist:
-    print(i)
+# ms = MSSQL()
+# reslist = ms.ExecQuery("SELECT * FROM Movie")
+# for i in reslist:
+#     print(i)
 
 # newsql = "UPDATE dbo.a SET name = '没有1' WHERE test = '2' AND name = '没有'"
 # ms.ExecNonQuery(newsql.encode('utf-8'))
