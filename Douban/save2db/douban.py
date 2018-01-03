@@ -12,7 +12,7 @@ def get_info(url):
     wb_data = requests.get(url)
     soup = BeautifulSoup(wb_data.text, 'lxml')
     names = soup.select('div.hd > a')
-    srcs = soup.select('div.pic > a')
+    srcs = soup.select('div.pic > a > img')
     playables = soup.select('div.hd > .playable')
     ps = re.findall('<br>\n\s+(.*?)\n\s+</p>', wb_data.text, re.S)
     places = re.findall('&nbsp;/&nbsp;(.*?)&nbsp;/&nbsp;', wb_data.text)
@@ -35,11 +35,12 @@ def get_info(url):
             'DetailLink': name.attrs['href'],
             'Director': director,
             'Performer': performer,
-            #'Type': pc[2],
-            'ScoreUserNum': scoreUserNum.replace('<span>', '').replace('人评价</span>', '')}
+            'Type': pc[2],
+            'ScoreUserNum': scoreUserNum.get_text().replace('人评价', '')}
+        print(info)
         top250.append(info)
 
 
 for url in urls:
     get_info(url)
-print(top250)
+
