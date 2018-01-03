@@ -22,9 +22,9 @@ class MSSQL:
         self.conn.close()
         return resList
 
-    def ExecNonQuery(self, sql):
+    def ExecNonQuery(self, sql, param):
         cur = self.__GetConnect()
-        cur.execute(sql)
+        cur.execute(sql, param)
         self.conn.commit()
         self.conn.close()
 
