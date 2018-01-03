@@ -33,7 +33,7 @@ def get_info(url):
         _type = info[2]
         scoreUserNum = node.select(
             'div.star > span:nth-of-type(4)')[0].get_text().replace('人评价', '')
-        sql = "INSERT INTO dbo.Movie (Title, OtherTitle, ImgSrc, Playable, Director, Performer, Year, Country, Type, Score, ScoreUserNum, Quote, DetailLink) VALUES ('" + title + "', '" + otherTitle + "', '" + \
+        sql = "INSERT INTO Movie (Title, OtherTitle, ImgSrc, Playable, Director, Performer, Year, Country, Type, Score, ScoreUserNum, Quote, DetailLink) VALUES ('" + title + "', '" + otherTitle + "', '" + \
             imgSrc + "', '" + playable + "', '" + director + "', '" + performer + "', '" + year + "', '" + \
             country + "', '" + _type + "', '" + score + "', '" + \
             scoreUserNum + "', '" + quote + "', '" + detailLink + "')"
