@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from sqlHelper import MSSQL
+import time
 
 
 def get_info(obj):
@@ -26,3 +27,4 @@ ms = MSSQL()
 result = ms.ExecQuery("SELECT * FROM Movie")
 for obj in result:
     get_info(obj)
+    time.sleep(1.5)  # 每次请求后等待一段时间，防止请求过快中断连接
