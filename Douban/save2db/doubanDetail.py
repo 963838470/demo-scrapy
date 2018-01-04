@@ -14,11 +14,12 @@ def get_info(obj):
     nodes = soup.select(".all")
     if len(nodes) <= 0:
         nodes = soup.select('[property="v:summary"]')
-    descript = nodes[0].prettify()
-    sql = 'UPDATE Movie SET Descript=%s WHERE Id = %d'
-    params = (descript, id)
-    print(params)
-    MSSQL().ExecNonQuery(sql, params)
+    if len(nodes) > 0:
+        descript = nodes[0].prettify()
+        sql = 'UPDATE Movie SET Descript=%s WHERE Id = %d'
+        params = (descript, id)
+        print(params)
+        MSSQL().ExecNonQuery(sql, params)
 
 
 ms = MSSQL()
