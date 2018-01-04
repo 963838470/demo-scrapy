@@ -10,7 +10,10 @@ import time
 def get_info(obj):
     url = obj[13]
     id = obj[0]
-    response = requests.get(url)
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'
+    }
+    response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'lxml')
     nodes = soup.select(".all")
     if len(nodes) <= 0:
@@ -26,5 +29,6 @@ def get_info(obj):
 ms = MSSQL()
 result = ms.ExecQuery("SELECT * FROM Movie")
 for obj in result:
-    get_info(obj)
-    time.sleep(1.5)  # 每次请求后等待一段时间，防止请求过快中断连接
+    if obj[0] > -1:
+        get_info(obj)
+        time.sleep(10)  # 每次请求后等待一段时间，防止请求过快中断连接
