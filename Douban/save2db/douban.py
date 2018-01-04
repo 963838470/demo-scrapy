@@ -5,8 +5,6 @@ from bs4 import BeautifulSoup
 import re
 from sqlHelper import MSSQL
 
-top250 = []
-
 urls = [
     'https://movie.douban.com/top250?start={}'.format(str(i)) for i in range(0, 250, 25)]
 
