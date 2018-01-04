@@ -1,2 +1,2 @@
 # demo-scrapy
-scrapy 框架demo
+python爬虫，包括scrapy框架、BeautifulSoup、requests等使用
